@@ -1,0 +1,45 @@
+# Failsafe + GPS / RTL for Pixhawk 2.4.8 (ArduCopter)
+# Apply after quad-x-baseline.param. Adjust battery thresholds to your pack.
+
+# RC failsafe
+FS_THR_ENABLE,1
+FS_THR_VALUE,975
+FS_OPTIONS,0
+
+# GCS failsafe (disabled by default — enable if you use GCS control)
+FS_GCS_ENABLE,0
+
+# Battery failsafe (example for 4S LiPo — CHANGE for your pack)
+BATT_LOW_VOLT,14.0
+BATT_CRT_VOLT,13.2
+BATT_FS_LOW_ACT,2
+BATT_FS_CRT_ACT,1
+BATT_ARM_VOLT,14.8
+BATT_LOW_MAH,0
+BATT_CRT_MAH,0
+
+# GPS failsafe
+FS_EKF_ACTION,1
+FS_EKF_THRESH,0.8
+FS_CRASH_CHECK,1
+
+# Return-to-Launch
+RTL_ALT,1500
+RTL_ALT_FINAL,0
+RTL_CLIMB_MIN,0
+RTL_SPEED,500
+RTL_CONE_SLOPE,3.0
+RTL_LOIT_TIME,5000
+
+# Simple fence (optional — set FENCE_ENABLE,0 to disable)
+FENCE_ENABLE,0
+FENCE_TYPE,7
+FENCE_ACTION,1
+FENCE_ALT_MAX,50
+FENCE_RADIUS,150
+FENCE_MARGIN,2
+
+# GPS quality helpers
+GPS_GNSS_MODE,0
+GPS_MIN_ELEV,-100
+GPS_SBAS_MODE,2
