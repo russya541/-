@@ -6,6 +6,7 @@
 
 | Путь | Назначение |
 |------|------------|
+| [docs/pixhawk-248/flash-and-setup.md](docs/pixhawk-248/flash-and-setup.md) | **Пошагово:** подключение, прошивка, смена настроек |
 | [docs/pixhawk-248/README.md](docs/pixhawk-248/README.md) | Обзор и порядок настройки |
 | [docs/pixhawk-248/checklist.md](docs/pixhawk-248/checklist.md) | Чеклист перед первым полётом |
 | [params/quad-x-baseline.param](params/quad-x-baseline.param) | Базовые параметры для квадрокоптера X |
@@ -14,7 +15,7 @@
 
 ## Быстрый старт
 
-1. Прошейте актуальную стабильную прошивку **ArduCopter** через Mission Planner → Setup → Install Firmware (плата: Pixhawk).
+1. Следуйте [пошаговой инструкции](docs/pixhawk-248/flash-and-setup.md): USB → Mission Planner → Install Firmware (ArduCopter / Pixhawk).
 2. Выполните калибровки: акселерометр, компас, радио, ESC (если нужно).
 3. Загрузите параметры: Config/Tuning → Full Parameter List → Load → выберите файлы из `params/` по порядку: baseline → failsafe-gps → tuning-soft.
 4. Сохраните (`Write Params`) и перезагрузите контроллер.
