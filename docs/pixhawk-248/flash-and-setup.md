@@ -193,6 +193,22 @@ Connect (COM, 115200)
 
 **Признаки, что прошивка живая:** после Connect HUD показывает горизонт, внизу идут пакеты, в Data есть Flight Data без окна Aggregate-ошибки.
 
+**Если Status: `ERROR: No Response from board`**
+
+Плата на COM видна, но bootloader не отвечает. Connect бесполезен, пока прошивка не запишется.
+
+1. Закройте QGC и другие копии MP. В диспетчере устройств при подключении USB должен появляться/меняться COM — запомните номер.
+2. Другой **data**-кабель и порт USB 2.0 напрямую в ПК (не хаб, не «только зарядка»).
+3. На экране Install Firmware: **Force Bootloader** → сразу (за 2–3 с) клик по **Copter** → Platform **`Pixhawk1-1M`**.
+4. Если снова No Response: отключите USB → зажмите кнопку **Safety** на Pixhawk → воткните USB, держите 2–3 с → отпустите → сразу снова Copter / `Pixhawk1-1M`.
+5. Подключите **POWER + АКБ** (пропы сняты) + USB и повторите Force Bootloader → Copter.
+6. Прошейте через **QGroundControl → Firmware** (часто лучше видит bootloader на клонах 2.4.8).
+7. Поставьте официальный Mission Planner с ardupilot.org вместо сборки `CubePilot\MissionPlanner`.
+8. Выньте microSD на время прошивки и повторите.
+9. Если устройство в диспетчере «Unknown» / без COM — переустановите драйвер USB (Mission Planner / STM32 VCP), перезагрузите ПК.
+
+Пока Status не покажет успех прошивки, ошибка Aggregate/Connect будет повторяться.
+
 **Если ошибка остаётся после Install Firmware**
 
 1. Убедитесь, что внизу в **Status** было явное сообщение об успехе прошивки (не пусто и не Error). Если успеха не было — Connect бесполезен.
